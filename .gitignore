@@ -1,0 +1,16 @@
+node_modules
+.dev.vars
+.env*
+!.env.example
+.wrangler
+.DS_Store
+dist
+
+# local working notes
+BUILD_PLAN.md
+BUILD_LOG.md
+CLAUDE.md
+AGENTS.md
+.agents/
+.claude/
+skills-lock.json

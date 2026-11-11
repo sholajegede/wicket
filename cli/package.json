@@ -1,0 +1,40 @@
+{
+  "name": "wicket-gate",
+  "version": "0.1.0",
+  "description": "Put a staging or preview site behind a sign-in, and invite or remove people from the terminal",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "wicket": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sholajegede/wicket.git"
+  },
+  "keywords": [
+    "staging",
+    "preview",
+    "authorization",
+    "cli",
+    "kinde",
+    "cloudflare"
+  ],
+  "homepage": "https://github.com/sholajegede/wicket#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

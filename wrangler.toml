@@ -1,0 +1,37 @@
+name = "wicket"
+main = "src/index.ts"
+compatibility_date = "2026-01-01"
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+run_worker_first = true
+
+[[kv_namespaces]]
+binding = "SITES"
+id = "0184a80d43fa4e7da4841b7f372802ac"
+
+[[durable_objects.bindings]]
+name = "ORG"
+class_name = "OrgDO"
+
+[[durable_objects.bindings]]
+name = "SITE"
+class_name = "SiteDO"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = [ "OrgDO", "SiteDO" ]
+
+[vars]
+KINDE_DOMAIN = "https://learnflowai.kinde.com"
+KINDE_CLIENT_ID = "5cde18194fc64eba857d5ba3b30f3fe9"
+FEATURE_CODE = "protected_sites"
+MEMORY_WINDOW_MS = "5000"
+CACHE_WINDOW_MS = "30000"
+DENY_WINDOW_MS = "2000"
+JWKS_REFRESH_S = "300"
+JWKS_MAX_STALE_S = "86400"
+MAX_TOKEN_AGE_S = "3600"
+REQUIRED_PERMISSION = ""
+ALLOW_SIMULATION = "1"

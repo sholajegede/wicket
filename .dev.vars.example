@@ -1,0 +1,6 @@
+KINDE_M2M_CLIENT_ID=
+KINDE_M2M_CLIENT_SECRET=
+# organization code to Kinde billing customer ID
+CUSTOMERS_JSON={"org_xxx":"customer_xxx"}
+# any long random string; the gate signs the headers it sends to your site with it
+SIGNING_SECRET=

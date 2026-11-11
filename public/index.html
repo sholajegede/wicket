@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wicket</title>
+<meta name="description" content="Put a staging or preview site behind a sign-in at the edge. Share work in progress with a client, and take access away when you want.">
+<link rel="stylesheet" href="/_wicket/ui/style.css">
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">wicket</a>
+  <span class="grow"></span>
+  <a class="link" href="https://github.com/sholajegede/wicket">GitHub</a>
+  <a class="btn" href="/app">Open dashboard</a>
+</nav>
+
+<main class="wrap">
+  <h1>Share work in progress.<br><em>Not with everyone.</em></h1>
+  <p class="lede">Wicket puts any staging or preview site behind a sign-in. Your client opens a link, signs in with their email, and sees the site. You can take their access away at any time.</p>
+  <div class="row">
+    <a class="btn" href="/app">Open dashboard</a>
+    <span class="term mono"><i>$</i> npx wicket protect https://staging.example.com</span>
+  </div>
+
+  <section class="block">
+    <div class="cols">
+      <div><span class="num">01</span><h3>Point it at a site</h3><p>Give Wicket the address of a staging or preview site. It returns a new address that asks for a sign-in first.</p></div>
+      <div><span class="num">02</span><h3>Invite by email</h3><p>Add the email of each client, with an end time if you want one. They sign in through Kinde. There is no password to share.</p></div>
+      <div><span class="num">03</span><h3>Take it back</h3><p>Remove an email and the site closes to that person. A site you mark strict closes the moment you remove them.</p></div>
+    </div>
+  </section>
+
+  <section class="block">
+    <h2>How a check <em>stays fast and stays true</em></h2>
+    <p class="lede">The gate runs in Cloudflare's data centers. It checks the sign-in itself and keeps copies of the answer to "may this person open this site", and each copy has a time limit.</p>
+    <div class="tablebox"><table>
+      <tr><th>Where the answer is kept</th><th>Used for</th><th>Can be this old</th></tr>
+      <tr><td class="k">Memory of one Worker</td><td>Signing keys, access answers<small>Not guaranteed to survive between requests.</small></td><td>5 seconds</td></tr>
+      <tr><td class="k">Cache of one data center</td><td>Access answers<small>Not shared with other data centers.</small></td><td>30 seconds</td></tr>
+      <tr><td class="k">KV</td><td>Site settings<small>Other locations can take a minute or more to see a change.</small></td><td>about 1 minute</td></tr>
+      <tr><td class="k">Durable Object</td><td>Who has access<small>One copy in the world. It is the only place that decides.</small></td><td>never old</td></tr>
+    </table></div>
+  </section>
+</main>
+<footer>Wicket is an open source demo of authorization at the edge, built on Cloudflare Workers and Kinde.</footer>
+</body>
+</html>

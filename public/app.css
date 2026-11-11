@@ -1,0 +1,30 @@
+.app{padding-bottom:80px}
+.head{margin:48px 0 20px}
+#signin{margin-top:48px}
+.orgs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.orgs button{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:22px;text-align:left;font:500 16px "Geist",sans-serif;cursor:pointer}
+.orgs button:hover{border-color:#52525b}
+.addrow{display:grid;grid-template-columns:2fr 1fr 110px auto;gap:10px;margin-bottom:8px}
+input,select{background:var(--panel);color:var(--text);border:1px solid var(--line2);border-radius:8px;padding:10px 12px;font:14px "Geist",sans-serif;min-width:0}
+input:focus,select:focus{outline:none;border-color:#71717a}
+.msg{min-height:22px;color:var(--bad);font-size:14px;margin:4px 0 12px}
+.sites{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.site{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.site .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.site .name{font-weight:500}
+.site .origin{color:var(--dim);font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:120px}
+.pill{border:1px solid var(--line2);border-radius:99px;padding:2px 10px;font-size:12px;color:var(--muted)}
+.pill.strict{color:var(--warn);border-color:#4a3b0a}
+.addr{display:flex;align-items:center;gap:8px;margin:12px 0;background:#000;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.addr code{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mini{background:transparent;color:var(--muted);border:1px solid var(--line2);border-radius:6px;padding:4px 10px;font:13px "Geist",sans-serif;cursor:pointer}
+.mini:hover{color:var(--text);border-color:#52525b}
+.mini.danger:hover{color:var(--bad);border-color:#5b2b2b}
+.clients{border-top:1px solid var(--line);margin-top:14px;padding-top:14px}
+.client{display:flex;align-items:center;gap:12px;padding:6px 0;font-size:14px}
+.client .e{flex:1;overflow:hidden;text-overflow:ellipsis}
+.client .until{color:var(--dim);font-size:13px}
+.invite{display:grid;grid-template-columns:1fr 140px auto;gap:8px;margin-top:10px}
+.none{color:var(--dim);font-size:14px}
+.hint{color:var(--dim);font-size:13px;margin-top:26px;max-width:640px}
+@media(max-width:760px){.orgs{grid-template-columns:1fr}.addrow{grid-template-columns:1fr 1fr}.invite{grid-template-columns:1fr}}
